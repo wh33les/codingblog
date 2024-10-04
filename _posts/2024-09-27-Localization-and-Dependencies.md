@@ -1,0 +1,40 @@
+---
+layout: post
+title: Localization and dependencies.
+date: 2024-09-27 #13:00:00 -06:00
+---
+I haven't finished the SQL course yet, but I've learned about everything on the certification exam now except creating tables, which I already kind of know how to do, anyway.  Recently got excited about Erd&#337;s Institute's Software Engineering for Data Scientists asynchronous course and I'm sort of participating in this fall's DS boot camp, too.  
+
+As part of participation in the fall 2024 boot camp, Steven created a Jupyter notebook that generates an access code, and it only works if you completely follow his instructions for installing `conda`.  I didn't understand why I needed to do this when I'd already installed Anaconda and run Jupyter notebooks in the past, but when I cloned this semester's boot camp's repository and ran the access code Jupyter notebook, sure enough, it didn't work.  So I decided to follow the steps and once I got the access code, figure out how Steven did it and write a blog post about it.  Not this blog post, though, hopefully the next one.
+
+### Prep: computer cleanup
+
+The first thing I wanted to do was uninstall my version of `conda`, along with Python, and it ended up being a lot of additional superfluous crap on my computer.  I was initially going to use CCleaner to do clear everything out, but in the past CCleaner has been very spammy.  Some IT guy long ago recommended CCleaner to me.  Or maybe it was my dad.  Maybe it wasn't so spammy in the past but it's really annoying these days.  
+
+I Googled an alternative and found a Reddit post that said the Windows utilities for file cleanup are actually quite sufficient.  So I went to control panel Add/Remove Programs.  Lots of stuff I don't need anymore like R for Windows and MySQL.  I also knew I had at least two versions of Python.  One thing, I noticed VS Code was not on the list.  I later learned that I can get it on the list by editing its registry entry, and it looks like it's pretty easy to Google how to do that.  Nice to know, but more and more I definitely don't want to get rid of VS Code!  So far I've found it's *great* for editing my website and blog posts but I recently learned it can run Jupyter notebooks, too.  Steven has installing it in his boot camp setup directions, too.  I think it's becoming an industry standard.  (I'm also aware it can compile $\LaTeX$ but I haven't found an easier way to do that than the script file I wrote that makes Notepad++ do it.)  
+
+I had some trouble removing XAMPP, which I'd installed when I was trying to learn how to use Node.js and MySQL to make Husband's video game database (TBC with that project).  After restarting my computer I opened Control Panel again and it took me to a differently formatted list of programs, not sure what I did differently.  I right-clicked XAMPP and it just gave me the option to uninstall so I did.
+
+After I uninstalled everything I wanted, I ran disk cleanup.  Just checked the default boxes.  There was an option to clean system files so I did that, too.  I think in the two years I've had this computer I've never done that, but I've also never had problems with my computer running slow.  Recovered over a GB.  Emptied my Recycle Bin while I was waiting for disk cleanup to finish.
+
+### `conda`
+
+After disk cleanup I restarted my computer again, then began to follow the instructions Steven sent me.  The first step was to download and install `conda`.  He gave the link and I chose the full installation of Anaconda over Miniconda.  I kind of wanted the lightweight Miniconda, I didn't mind the idea of installing packages on the fly, but it came with another link to instructions that I didn't feel like reading.  While Anaconda was downloading I created a profile.
+
+In the setup wizard I noticed the default location to install was my user folder in Windows.  I remembered, I've noticed a lot of programs don't install to the Program Files folders by default anymore.  I Googled that.  It looks like it's because I didn't want to have to use administrator privileges to do stuff with the program.  I'm starting to get the impression it's better that way.  Maybe I oughtta go through all my programs and choose carefully which ones I want to need administrator privileges.  Administrator privileges are such a pain.  When do I really need them?
+
+### CLIs
+
+Steven's instructions began with "opening a terminal" and typing `conda --version`.  I'm in Windows 11, so I clicked on the Windows logo in my taskbar, typed `cmd` and hit enter.  Typed `conda --version` and it didn't work.  After I installed Anaconda I tried again and it didn't work.  Steven said I needed to be in Anaconda Prompt.
+
+What's up with all these command lines?  I'd also been aware of Powershell, but had never seen any reason to prefer it to the standard cmd.  I decided to Google once and for all, which command line is the best.  It's Powershell.  I'm not exactly sure of the advantages other than integration with the .NET framework, which I've never used, but which I may eventually end up learning for the sake of skills to put on my resum&eacute;.  But evidently the only advantage to using cmd is backward-compatibility with older Windows applications.  From what I've gathered, Powershell has all the capabilities as cmd, plus more advanced features which I may be interested in using later on.  And, I have the impression now that it's what experts and professionals prefer to use.
+
+So why is there an Anaconda Prompt?  I've seen specialized command lines with other programs, too, I got a command line interface with Python and also one with Git.  I Googled this.  It's about the PATH variables.  To use the program in regular cmd or Powershell you must be in the correct directory or else add the directory to the PATH variables.  When you use the command line that comes with the program, the PATH is already available and you can run commands in the program while in any directory.  I've added PATH variables before, it's easy to Google how to do it.  But I realized, rather than cluttering up my PATH variables list, by using Anaconda Prompt I can keep things more localized.  And I'm starting to suspect there's an advantage to this.
+
+### Environments
+
+One of the last steps in Steven's instructions is to create and activate a coding environment using `conda`.  Why?  The environment is for the boot camp: all Python packages I install for the boot camp coding activities are in this environment and are only available in this environment.  I learned this is best practices.  If I work on some other project later that uses certain dependencies, if I do it in a different environment then I don't have to worry about any dependency conflicts with the packages I installed for the boot camp.
+
+So it's all coming together now!  I remember seeing a hint of this when I was learning how to use Node.js.  Apparently for each project there a dependency file is just created.  And after getting into that SE course I'm seeing that when you're on a team with multiple projects going, this is exactly what you want, to keep projects localized so they don't negatively interfere with one another.  This also helps ensure the code really is reusable so different individuals on different machines and at different times can work on the same project.
+
+I've never had to worry about this before, as I'm the only one who uses my computer, and I've only ever done coding projects by myself.  But the whole point of building up my resum&eacute; skills is to get them transferable to a job, where I'm going to need to be working on a team.  What I'm hoping to get next out of this SE course is how to really utilize git for version control (so far I've basically been using GitHub as glorified cloud storage for my coding projects).  And I've got a project in mind that may need to go across multiple repositories.  I want to know if this is practical, and if so, how to do it.

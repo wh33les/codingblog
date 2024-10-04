@@ -1,0 +1,5 @@
+---
+layout: post
+title: Comments about comments.
+---
+At some point soon I would like to figure out how to enable comments.  It's something to do with registering with Disqus.  Meanwhile, I'm aware some computer files should be stored locally, rather than somewhere like Dropbox or in a Public or All Users folder.  I might crowdsource this on Facebook -- the question is, which files are appropriate for storing on the cloud, and which files are better stored on an internal hard drive?  I learned today, while spending three hours trying to compile the [McDowell Latex resumé template](https://github.com/dnl-blkv/mcdowell-cv), that it makes a very big difference whether or not you run Miktex as an administrator when updating or installing packages.  This issue is that depending on who you update as, Administrator vs. User, the files that get downloaded go to wildly different places on the hard drive.  In fact, from what I can tell 90% of compile errors result from the compiler not being able to find the files it needs, because of this issue.

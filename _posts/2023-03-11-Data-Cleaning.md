@@ -1,0 +1,9 @@
+---
+layout: post
+title: Data cleaning.  
+---
+Today and last night I worked more on the bootcamp project.  My first goal was to scrape the table with the column names for the first file from Kaggle.  It turned out to be a little more involved, because the table was not made using html, it was made using Markdown in a `script` element.  It took awhile, but I was able to pull the text from within that `script` element, then use the `split` function to create strings separated by the newline character, to get each row of the table.  Then I used `split` again to create two lists, one for each column of the table.  Then it didn't take long to rename the columns in my master data file according to the values in the table.
+
+Next I wanted to find a way to delete some of the useless columns of the data and rename some of the others, but since each column was different I wasn't sure how to automate the process.  It seemed daunting to edit each column manually because there were 198 columns.  What I ended up doing was using the `input` function in a loop that would prompt me at each column title whether or not I wanted to delete the column or rename it.  The code was able to compile after only a few errors and it didn't take long to follow the prompts and change the columns.  However, after I was done I realized I'd forgotten a line of code that would rename the columns I specified.  I think it's OK, though.  I think if I run the previous code where I created my master data table I can recover the original columns and try again with the fixed code.
+
+My code is probably not as efficient as it could be, but I'm aware of the mantra, "First write code that works, then make it pretty."  I had to split my Jupyter notebook into two because all the code, output, and annotations were making the notebook really long.  But I've made a lot of progress, and I'm happy about that.
