@@ -21,7 +21,7 @@ $$\hat y_t = y_{t-1}$$
 
 Let $\hat y_t$ be the model's prediction of the time series at time $t$ and $y_t$ the observed value at time $t$ (in general, $\hat y$ always denotes a model's predicted value in machine learning while $y$ denotes the observed value in the test data).  If the holdout data has observations $y_1,\dots y_N$, then MASE is given by 
 
-$$\frac{\sum_{t=1}^N|\hat y_t-y_t|}{\sum_{t=1}^N|y_{t-1}-y_t|}.$$
+$$\text{MASE} = \frac{\sum_{t=1}^N|\hat y_t-y_t|}{\sum_{t=1}^N|y_{t-1}-y_t|}.$$
 
 ### Advantages of MASE
 
