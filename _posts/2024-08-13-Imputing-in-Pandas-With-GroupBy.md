@@ -35,7 +35,5 @@ Then finally, my rolling averages.  I actually computed them for windows from si
 
 ![Rolling averages](./images/rolling-avgs.png)
 
-[You can see the final Tableau dashboard here.](https://public.tableau.com/app/profile/ashley.k.w.warren/viz/2024U_S_PresidentialElectionPollingaveragesovertimeforthe2majorparties/Presentation)
-
 
 

@@ -2,7 +2,7 @@
 layout: post
 title: Personal website.
 ---
-This past weekend I decided to make a personal website.  Whenever I have a professional website, if I switch jobs then I lose the site.  I wanted to have a permanent place with all of my materials.  I used GitHub Pages to host the site.  [Here](https://wh33les.github.io) is the url.
+This past weekend I decided to make a personal website.  Whenever I have a professional website, if I switch jobs then I lose the site.  I wanted to have a permanent place with all of my materials.  I used GitHub Pages to host the site. 
 
 As I was making the website I spent a lot of time trying to beautify my code as I went along.  I made notes and this post is just going to be a list of issues that arose.
 

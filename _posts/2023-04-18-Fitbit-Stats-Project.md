@@ -2,7 +2,7 @@
 layout: post
 title: Fitbit stats project.
 ---
-It's done, I submitted the project on Friday!  [Here](https://wh33les.github.io/FitbitStatsProject/) is a link to it.
+It's done, I submitted the project on Friday!  
 
 It took a little bit to get the time axes.  There was an exercise from the minicourse problem sets that said how to do it, but I still had to Google around to get the information I wanted.  [This site](http://using-d3js.com/04_04_working_with_dates.html) was the most helpful.  For the monthly graphs, I wanted the tick marks to be one-letter abbreviations for the days of the week.  I wasn't able to format those axes right until Matt's last office hours on Friday.  He had suggested before that I make a function that maps the numerical day of the week (0-6) to its abbreviation.  This was hard to do because my axis function isn't bound to the data and so I didn't know what to put for the input.  Matt helped me to determine what my variable `d` was, it turns out it was just the date of the data point.  So given my array `week` with the abbreviations, I was able to make the following function under `tickFormat`:
 ```

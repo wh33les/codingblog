@@ -3,7 +3,7 @@ layout: post
 title: Tableau challenges with pandas.
 date: 2024-07-24 13:00:00 -06:00
 ---
-As I mentioned in the last post, right now I am working on a Tableau project with polling data from fivethirtyeight.  [Here's a link to the data I'm using.](https://projects.fivethirtyeight.com/polls/data/president_polls.csv)  Overall I am looking to make a time series line chart with the poll results for each candidate over time (I feel like that's the big story, later I can add filters like how the results change depending on who's polled, who does the polling, etc.).  I'm going by the end date for each poll.  Here are some challenges:
+As I mentioned in the last post, right now I am working on a Tableau project with polling data from fivethirtyeight.  Overall I am looking to make a time series line chart with the poll results for each candidate over time (I feel like that's the big story, later I can add filters like how the results change depending on who's polled, who does the polling, etc.).  I'm going by the end date for each poll.  Here are some challenges:
 
 (1) Some days have several polls and others have no polls.  Displaying data for all the polls looks messy, even for just a few candidates (I'm looking at Trump, Biden, Harris, and Kennedy, but maybe I'll add a filter to the dashboard since the data includes a *lot* of candidates).  I figured out a way to get a daily average for each candidate, it's pretty messy, though.
 
