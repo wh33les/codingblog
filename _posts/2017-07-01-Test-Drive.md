@@ -2,7 +2,7 @@
 layout: post
 title: Test drive! 
 ---
-As an exercise, go back to the [10 June 2017 post](https://wh33les.github.io/Structures-in-C/) and zoom in until the screen capture of my C snippet illustrating an array becomes readable.  Assuming the all-caps comments are filled in with correct code, or filling them in yourself, what do you expect will be the result of running this little program?  I could've sworn I'd already tested this using an online compiler but yesterday I found out I was wrong.
+As an exercise, go back to the [10 June 2017 post](https://transitioning-to-industry.org/Structures-in-C.html) and zoom in until the screen capture of my C snippet illustrating an array becomes readable.  Assuming the all-caps comments are filled in with correct code, or filling them in yourself, what do you expect will be the result of running this little program?  I could've sworn I'd already tested this using an online compiler but yesterday I found out I was wrong.
 
 Since I've been working on my Unix proficiency, I downloaded [Cygwin](https://www.cygwin.com/) and the [gcc](https://gcc.gnu.org/) package(s) to compile this code.  
 >Cygwin is a Unix-like environment and command-line interface for Microsoft Windows. Cygwin is huge and includes most of the Unix tools and utilities. It also include[s] the commonly-used Bash shell.
