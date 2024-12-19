@@ -3,7 +3,9 @@ layout: post
 title: Machine learning&#58; MASE
 date: 2024-10-28 #13:00:00 -06:00
 ---
-I recently completed a forecast project for the 2024 U.S. presidential election that used a double exponential smoothing algorithm [(you can see the project here, along with some info about double exponential smoothing)](https://wh33les.github.io/2024ElectionForecast).  In developing the model, I used a grid search with the metric MASE, which stands for **mean absolute scaled error**.
+I recently completed a forecast project for the 2024 U.S. presidential election that used a double exponential smoothing algorithm.
+<> [(you can see the project here, along with some info about double exponential smoothing)](https://wh33les.github.io/2024ElectionForecast).  
+In developing the model, I used a grid search with the metric MASE, which stands for **mean absolute scaled error**.
 
 For the grid search, I used cross-validation for time series, with the training data as selected polling data from the day Biden dropped out of the race to the most recent poll, with five splits, and with holdout sets of seven days each.  The hyperparameters $\alpha$ and $\beta$ varied in each train-train set, from 0.0 to 1.0, in 0.01 increments.  So for each cv split I tested 100 combinations of $\alpha$ and $\beta$, then took the minimum MASE from the 500 models, and I did this for each of the two candidates.
 
