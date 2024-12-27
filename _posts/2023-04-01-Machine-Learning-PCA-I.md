@@ -17,10 +17,8 @@ Here's the idea&#58; Say you have a matrix of data, where the columns are indexe
 The following visualizations are from Matt's data science bootcamp lecture on PCA from fall 2022.  The first visualization is a data set with two features, $x_1$ and $x_2$.  The arrows on the graph are the PCA components, scaled so that their magnitude matches the variance of the data in that direction.  The second visualization is the data replotted with the new coordinate system given by the PCA components.  The point is that the variance in the data from the first graph is preserved in the second graph, the data points have just been rotated to make a more homogeneous picture.
 
 ![Original data with PCA component vectors](./images/data_with_components.png)
-<!--<img src="https://wh33les.github.io/Blog/images/data_with_components.png" alt="Original data with PCA component vectors" title="Original data with PCA component vectors" width=49%> </img>-->
 
 ![Data with the PCA components as coordinate vectors](./images/transformed_data.png)
-<!--<img src="https://wh33les.github.io/Blog/images/transformed_data.png" alt="Data with the PCA components as coordinate vectors" title="Data with the PCA components as coordinate vectors" width=49%></img>-->
 
 Now that we can see the highest amount of variance in the first graph spread horizontally in the second graph, the data points in the second graph can be flattened to the $x$-axis without losing much information about the variance.  Flattening reduces this data set with 2 dimensions to one with 1 dimension.
 

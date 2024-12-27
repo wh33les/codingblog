@@ -14,7 +14,6 @@ So I went with Matt's Facebook idea.  He said the comments on the 538 article sh
 
 So I decided to go back to `selenium`.  During Matt's office hours on Wednesday he had given me this idea to try a switch frame command that would load the webpage embedded in the article page (I had seen on the "inspect element" source that there was an entire `index.html` file embedded in the source code).  It didn't work, and we were both unsure of how to use it anyway, but seeing that idea yesterday among all the other failed code I had commented out working on this project gave me another idea.  And this is the idea that worked!  I spent the rest of last night consolidating all of my scraping code and since scraping the number of comments was the hardest task I made a function that would do it.!
 
-<!--<img src="https://wh33les.github.io/images/comments_function.png" title="comments function" height="100%" width="100%">-->
 ![Comments function](./images/comments_function.png)
 
 I'm still not sure how `selenium` works but at least I learned enough to get this to work.  I found out it could be used to click buttons on webpages, too.  The `driver` object is what opens the article and executes all the JavaScript on that page.  Matt said I might be able to get rid of the first instance of `driver.quit()` and the second instance of `driver = webdriver.Chrome()` but when I tried commenting those lines out the code ran way too slow.
