@@ -69,7 +69,7 @@ class Solution:
             s[i], s[-i-1] = s[-i-1], s[i]
         return 
 ```        
-But in general, two pointers is appealing because with the two pointers covering different parts of the array, as long as the operations in the `while` loop are $O(1)$, the algorithm is $O(n)$.  In particular, it can avoid nested loops, which are $O(n^2)$ at best.  One example of a such a problem is given a sorted array of unique integers, find a pair of entries that sums to a given integer.  The na&iuml;ve approach is to use a nested loop to compare pair each entry with each other entry -- even when removing redundant comparisons by starting the nested loop's index at `j=i+1`, the algorithm is still $O(\frac{n}{2})$ (technically).   
+But in general, two pointers is appealing because with the two pointers covering different parts of the array, as long as the operations in the `while` loop are $O(1)$, the algorithm is $O(n)$.  In particular, it can avoid nested loops, which are $O(n^2)$ at best.  One example of a such a problem is given a sorted array of unique integers, find a pair of entries that sums to a given integer.  The na&iuml;ve approach is to use a nested loop to pair each entry with each other entry -- even when removing redundant comparisons by starting the nested loop's index at `j=i+1`, the algorithm is still $O\left(\frac{n}{2}\right)$ (technically).   
 
 [Here is an example that I really struggled with in the Explore Cards:](https://leetcode.com/problems/squares-of-a-sorted-array/description/) Given an integer array `nums` sorted in non-decreasing order, return an array of the squares of each number sorted in non-decreasing order.  My first submission passed 129 test cases then on `nums=[-9995,-9994,...,9993,9994]` it failed the time constraint:
 ```python
@@ -98,7 +98,7 @@ class Solution(object):
         squares.sort()
         return squares   
 ```                
-I also realize now that my identifier `sorted` in the previous solution is a reserved word in Python.  Python's `sort()` methods runs in $O(n\log n)$ time.  Final solution, with the two-pointer technique, beat all my other submissions in speed:
+I also realize now that my identifier `sorted` in the previous solution is a reserved word in Python.  Python's `sort()` method runs in $O(n\log n)$ time.  Final solution, with the two-pointer technique, beat all my other submissions in speed:
 ```python
 class Solution:
     def sortedSquares(self, nums: List[int]) -> List[int]:
