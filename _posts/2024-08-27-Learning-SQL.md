@@ -5,7 +5,7 @@ date: 2024-08-27 #13:00:00 -06:00
 ---
 I'm doing a SQL course on Udemy!  [It's the one that's ranked really high.](https://www.udemy.com/course/the-complete-oracle-sql-certification-course)  At first I thought it was too slow, but I bought [Oracle's SQL book,](https://www.amazon.com/dp/1259585492?ref=ppx_yo2ov_dt_b_fed_asin_title) which the instructor of the course recommended, and it turns out the videos I've watched so far cover like 4 chapters of the book already.  That, along with the interview prep exercises I found on leetcode, should be plenty to make me feel prepared for the exam.  In this post I'd like to talk about some neat stuff I'm learning.
 
-### Ampersand substitution
+## Ampersand substitution
 
 This is a SLQ*Plus feature, but according to the book, it will be on the 1Z0-071 exam.  It looks like it's covered in video 66 in the course but so far I've only read about it in the book.
 
@@ -30,7 +30,7 @@ WHERE ROOM_NUMBER = &RoomNumber;
 
 The output will be the prompt, `Enter value for roomnumber:` and what the user types will be stored as RoomNumber.  Notice there is no 'v' here.  (Also, I'm aware SQL is not a case-sensitive language but I'm still not sure whether that applies to variable names.  The prompt may actually be `Enter value for RoomNumber:`.)
 
-### `SOUNDEX()`
+## `SOUNDEX()`
 
 This is a character function that returns what a string "sounds like".  It is a code with a letter followed by three digits, based on the first several letters of the word.  The letter is just the first letter of the word.  The digits that follow are encoded as follows:
 

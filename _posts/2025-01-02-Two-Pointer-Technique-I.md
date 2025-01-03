@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Two-pointer technique I
+title: Two-pointer technique I.
 date: 2025-01-02 #13:00:00 -06:00
 ---
 Been awhile!  After the election forecast I started a Kaggle competition that I am looking to wrap up pretty soon.  But in the meantime I got a job interview, and it's a coding interview.  I scheduled it for the first or second week of February so I would have time to prepare.  A friend of mine at Google said he used leetcode to prepare for his interview so that's where I started.  I went ahead and signed up for Premium because I wanted half off on courses.  Then I found an Explore Card track for data structures, that I believe comes with Premium already, and began with that.  Turned out to be more challenging than I expected!  Took over 6 hours to get through the first card, and with 19 cards, I knew I wouldn't be able to get through them all in time.  By the second card I was completely lost and suddenly my preparation felt unproductive.  Then my friend told me to look at the *interview* materials on leetcode and I found [this course in data structures](https://leetcode.com/explore/interview/card/leetcodes-interview-crash-course-data-structures-and-algorithms/) that claimed to be an efficient way to prepare for a coding interview.  It is!  And something that came up in the course that had been touched on in the Explore Cards, too, is what's known as the __two-pointer technique__.  
@@ -58,7 +58,7 @@ class Solution:
             end -= 1
         return   
 ```
-Of course, this is just a simple example -- technically, a faster solution is:
+Of course, this is just a simple example.  Technically, a faster solution is:
 ```python
 class Solution:
     def reverseString(self, s: List[str]) -> None:
@@ -69,7 +69,7 @@ class Solution:
             s[i], s[-i-1] = s[-i-1], s[i]
         return 
 ```        
-But in general, two pointers is appealing because with the two pointers covering different parts of the array, as long as the operations in the `while` loop are $O(1)$, the algorithm is $O(n)$.  In particular, it can avoid nested loops, which are $O(n^2)$ at best.  One example of a such a problem is given a sorted array of unique integers, find a pair of entries that sums to a given integer.  The na&iuml;ve approach is to use a nested loop to pair each entry with each other entry -- even when removing redundant comparisons by starting the nested loop's index at `j=i+1`, the algorithm is still $O\left(\frac{n}{2}\right)$ (technically).   
+But in general, two pointers is appealing because with the two pointers covering different parts of the array, as long as the operations in the `while` loop are $O(1)$, the algorithm is $O(n)$.  In particular, it can avoid nested loops, which are $O(n^2)$ at best.  One example of a such a problem is given a sorted array of unique integers, find a pair of entries that sums to a given integer.  The na&iuml;ve approach is to use a nested loop to pair each entry with each other entry -- even when removing redundant comparisons by starting the nested loop's index at `j=i+1`, the algorithm is still $O\left(\frac{n^2}{2}\right)$ (technically).   
 
 [Here is an example that I really struggled with in the Explore Cards:](https://leetcode.com/problems/squares-of-a-sorted-array/description/) Given an integer array `nums` sorted in non-decreasing order, return an array of the squares of each number sorted in non-decreasing order.  My first submission passed 129 test cases then on `nums=[-9995,-9994,...,9993,9994]` it failed the time constraint:
 ```python
