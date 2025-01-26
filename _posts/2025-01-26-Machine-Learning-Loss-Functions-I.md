@@ -26,16 +26,15 @@ $$\vec y = X\hat{\vec\beta} + \vec y_{\perp}$$,
 where $\vec y_{\perp}$ is perpendicular to $X\hat{\vec\beta}$.  This means it is killed by the transpose of $X$, so we have
 
 $$
-X^T\vec y = X^T\left\(X\hat{\vec\beta} + \vec y_{\perp}\right\)$$
+X^T\vec y = X^T\left\(X\hat{\vec\beta} + \vec y_{\perp}\right\)\implies
 
-$$
-X^T\vec y = X^TX\hat{\vec\beta} $$
 
-$$
-X^T\vec y - X^TX\hat{\vec\beta} = 0 $$
+X^T\vec y = X^TX\hat{\vec\beta} \implies
 
-$$
-\implies \hat{\vec\beta} = \left\(X^TX\right\)^{-1}X^T\vec y.
+
+X^T\vec y - X^TX\hat{\vec\beta} = 0 \implies
+
+\hat{\vec\beta} = \left\(X^TX\right\)^{-1}X^T\vec y.
 $$ 
 
 This is also known as the **normal equation** (and note, it doesn't work if the features are not linearly independent -- in that case one has to do feature selection to remove redundancies).
