@@ -10,15 +10,11 @@ A **neural network** can be thought of as a composition of affine functions with
 ## Example: Linear regression
 
 Linear regression is an example of a neural network with one affine function $f_{\vec\beta}:X\vec\beta$, where 
-
-{::nomarkdown}
 $$X = \begin{pmatrix}1 & x_{11} & \cdots & x_{1m} \\
 1 & x_{12} & \cdots & x_{2m} \\
 \vdots & \vdots & \cdots & \vdots \\
 1 & x_{1n} & \cdots & x_{nm}
 \end{pmatrix}$$
-{:/}
-
 denotes $m$ features and $n$ observations, $\vec\beta = (\beta_0,\beta_1,\dots,\beta_m)$, and there is no activation function.  The loss function is the mean square error, 
 $$\text{MSE}(\vec\beta) = \frac{1}{n}\|\vec y - X\vec\beta\|^2.$$
 There are two ways to minimize this function.  
@@ -26,18 +22,16 @@ There are two ways to minimize this function.
 The most direct way is the linear algebra approach, which I will go over briefly because it's so concise.  Minimizing the distance between $\vec y$ and $X\vec\beta$ is the same as finding the length of the projection of the vector $\vec y$ to the hyperplane spanned by the columns of $X$.  The coefficients $\hat{\vec\beta}=(\hat\beta_0,\cdots,\hat\beta_m)$ of the projection written as a linear combination of the $\vec x_i$s give the parameters that optimize the linear approximation.  We have the formula
 $$\vec y = X\hat{\vec\beta} + \vec y_{\perp}$$,
 where $\vec y_{\perp}$ is perpendicular to $X\hat{\vec\beta}$.  This means it is killed by the transpose of $X$, so we have
-
-{::nomarkdown}
-$$\\
+<div>
+$$
 \begin{align*}
 X^T\vec y &= X^T\left\(X\hat{\vec\beta} + \vec y_{\perp}\right\) \\
 X^T\vec y &= X^TX\hat{\vec\beta} \\
 X^T\vec y - X^TX\hat{\vec\beta} &= 0 \\
 \implies \hat{\vec\beta} &= \left\(X^TX\right\)^{-1}X^T\vec y.
 \end{align*}
-\\$$ 
-{:/}
-
+$$ 
+</div>
 This is also known as the **normal equation** (and note, it doesn't work if the features are not linearly independent -- in that case one has to do feature selection to remove redundancies).
 
 The other way uses multivariate calculus, and while it's more cumbersome than the linear algebra method, it's also the method that's generalizable to neural networks.  For multivariable functions, optima occur where the gradient is zero.  The loss function in this case happens to be [convex,](https://en.wikipedia.org/wiki/Convex_function) which guarantees anywhere the gradient is zero is a global minumum.  Thus we just set the gradient equal to zero and solve for $\hat\beta$.
