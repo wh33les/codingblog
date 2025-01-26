@@ -26,14 +26,10 @@ $$\vec y = X\hat{\vec\beta} + \vec y_{\perp}$$,
 where $\vec y_{\perp}$ is perpendicular to $X\hat{\vec\beta}$.  This means it is killed by the transpose of $X$, so we have
 
 $$
-X^T\vec y = X^T(X\hat{\vec\beta} + \vec y_{\perp})\quad\text{implies}\quad
-
+X^T\vec y = X^T(X\hat{\vec\beta} + \vec y_{\perp})\qquad\text{implies}\qquad
 X^T\vec y = X^TX\hat{\vec\beta} 
 \\
-
-
-\text{implies}\quad X^T\vec y - X^TX\hat{\vec\beta} = 0\quad \text{implies}\quad
-
+\text{implies}\quad X^T\vec y - X^TX\hat{\vec\beta} = 0\qquad \text{implies}\qquad
 \hat{\vec\beta} = (X^TX)^{-1}X^T\vec y.
 $$ 
 
@@ -44,22 +40,22 @@ The other way uses multivariate calculus, and while it's more cumbersome than th
 $$
 \nabla \text{MSE}(\vec\beta) = \lim_{\vec h\to \vec 0}\frac{\text{MSE}(\vec\beta+\vec h)-\text{MSE}(\vec\beta)}{\vec h} 
 \\
-\quad = \lim_{\vec h\to \vec 0}\frac{\|\vec y-X\hat{\vec\beta}\|^2 - 2(\vec y-X\hat{\vec\beta})\cdot(X\vec h) + \|X\vec h\|^2 - \|\vec y-X\hat{\vec\beta}\|^2}{\vec h} 
+= \lim_{\vec h\to \vec 0}\frac{\|\vec y-X\hat{\vec\beta}\|^2 - 2(\vec y-X\hat{\vec\beta})\cdot(X\vec h) + \|X\vec h\|^2 - \|\vec y-X\hat{\vec\beta}\|^2}{\vec h} 
 \\
-\quad = \lim_{\vec h\to \vec 0}\frac{\|\vec y-X\hat{\vec\beta}\|^2 - 2X^T(\vec y - X\hat{\vec\beta})\cdot\vec h + \|X\vec h\|^2 - \|\vec y-X\hat{\vec\beta}\|^2}{\vec h}
+= \lim_{\vec h\to \vec 0}\frac{\|\vec y-X\hat{\vec\beta}\|^2 - 2X^T(\vec y - X\hat{\vec\beta})\cdot\vec h + \|X\vec h\|^2 - \|\vec y-X\hat{\vec\beta}\|^2}{\vec h}
 \\
- \quad = - 2X^T(\vec y - X\hat{\vec\beta})
+= - 2X^T(\vec y - X\hat{\vec\beta})
 $$
 
 Now set to zero and solve:
 
 $$
--2X^T\left\(\vec y-X\hat{\vec\beta}\right\) = 0 
+-2X^T\left(\vec y-X\hat{\vec\beta}\right) = 0 
 \\
 \text{implies}\quad 
-X^T\left\(\vec y-X\hat{\vec\beta}\right\) = 0 
+X^T\left(\vec y-X\hat{\vec\beta}\right) = 0 
 \\
-\text{implies}\quad \hat{\vec\beta} = \left\(X^TX\right\)^{-1}X^T\vec y,
+\text{implies}\quad \hat{\vec\beta} = \left(X^TX\right)^{-1}X^T\vec y,
 $$
 
 which verifies the linear algebra technique.
