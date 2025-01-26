@@ -28,7 +28,8 @@ where $\vec y_{\perp}$ is perpendicular to $X\hat{\vec\beta}$.  This means it is
 $$
 X^T\vec y = X^T(X\hat{\vec\beta} + \vec y_{\perp})\quad\text{implies}\quad
 X^T\vec y = X^TX\hat{\vec\beta} 
-\quad\text{implies}\quad
+\\
+\text{implies}\quad
 \hat{\vec\beta} = \left(X^TX\right)^{-1}X^T\vec y.
 $$ 
 
