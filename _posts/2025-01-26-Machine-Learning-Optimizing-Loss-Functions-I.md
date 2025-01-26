@@ -43,7 +43,7 @@ $$
 \\
 = \lim_{\vec h\to \vec 0}\frac{\|\vec y-X\hat{\vec\beta}\|^2 - 2X^T\left(\vec y - X\hat{\vec\beta}\right)\cdot\vec h + \|X\vec h\|^2 - \|\vec y-X\hat{\vec\beta}\|^2}{\vec h}
 \\
-= - 2X^T(\vec y - X\hat{\vec\beta})
+= - 2X^T\left(\vec y - X\hat{\vec\beta}\right)
 $$
 
 Now set to zero and solve:
