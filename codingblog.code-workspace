@@ -1,0 +1,12 @@
+{
+	"folders": [
+		{
+			"name": "codingblog",
+			"path": "."
+		},
+		{
+			"path": "../data-science-fall-2024"
+		}
+	],
+	"settings": {}
+}
