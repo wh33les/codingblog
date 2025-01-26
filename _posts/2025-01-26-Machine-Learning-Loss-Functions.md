@@ -20,7 +20,7 @@ $$X = \begin{pmatrix}1 & x_{11} & \cdots & x_{1m} \\
 {:/}
 
 denotes $m$ features and $n$ observations, $\vec\beta = (\beta_0,\beta_1,\dots,\beta_m)$, and there is no activation function.  The loss function is the mean square error, 
-$$MSE(\vec\beta) = \frac{1}{n}\|\vec y - X\vec\beta\|^2.$$
+$$\text{MSE}(\vec\beta) = \frac{1}{n}\|\vec y - X\vec\beta\|^2.$$
 There are two ways to minimize this function.  
 
 The most direct way is the linear algebra approach, which I will go over briefly because it's so concise.  Minimizing the distance between $\vec y$ and $X\vec\beta$ is the same as finding the length of the projection of the vector $\vec y$ to the hyperplane spanned by the columns of $X$.  The coefficients $\hat{\vec\beta}=(\hat\beta_0,\cdots,\hat\beta_m)$ of the projection written as a linear combination of the $\vec x_i$s give the parameters that optimize the linear approximation.  We have the formula
@@ -45,7 +45,7 @@ The other way uses multivariate calculus, and while it's more cumbersome than th
 {::nomarkdown}
 $$\\
 \begin{align*}
-\nabla MSE(\vec\beta) &= \lim_{\vec h\to \vec 0}\frac{MSE(\vec\beta+\vec h)-MSE(\vec\beta)}{\vec h} \\
+\nabla \text{MSE}(\vec\beta) &= \lim_{\vec h\to \vec 0}\frac{\text{MSE}(\vec\beta+\vec h)-\text{MSE}(\vec\beta)}{\vec h} \\
  &= \lim_{\vec h\to \vec 0}\frac{\|\vec y-X\hat{\vec\beta}\|^2 - 2\left\(\vec y-X\hat{\vec\beta}\right)\cdot(X\vec h) + \|X\vec h\|^2 - \|\vec y-X\hat{\vec\beta}\|^2}{\vec h} \\
  &= \lim_{\vec h\to \vec 0}\frac{\|\vec y-X\hat{\vec\beta}\|^2 - 2X^T\left\(\vec y - X\hat{\vec\beta}\right)\cdot\vec h + \|X\vec h\|^2 - \|\vec y-X\hat{\vec\beta}\|^2}{\vec h} \\
  &= - 2X^T\left\(\vec y - X\hat{\vec\beta}\right)
