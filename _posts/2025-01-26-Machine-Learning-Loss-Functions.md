@@ -5,18 +5,18 @@ date: 2025-01-26 #13:00:00 -06:00
 ---
 I recently finished a Kaggle competition where I had to predict housing prices, given 79 features.  I tested several models, including linear and polynomial regression, some tree-based algorithms, and most interestingly, a neural network using PyTorch.  I learned a lot about neural networks in the process, and I wanted to touch on one aspect in these next two posts, loss functions.
 
-A **neural network** can be thought of as a composition of affine functions with "activation functions" between each one, that make the overall composition non-linear.  In this way one can approximate any continuous function arbitrarily closely with the right neural network.  This is an example of a [universal approximation theorem.](https://en.wikipedia.org/wiki/Universal_approximation_theorem)  The $i$th affine function $A_i:\mathbb R^{m_i}\to \mathbb R^{n_i}$ has the form $A_i(\overrightarrow x) = W_i\overrightarrow x +\overrightarrow b_i$, where $W_i$ is a matrix, and the **parameters** $W_i$, $\overrightarrow b_i$ for all $i$ can be tuned to give the best approximation by **training** the neural network.  Training a neural network consists of step-by-step modifying the parameters to minimize a **loss function**, a function that measures the error of the predictions made on the training data.  
+A **neural network** can be thought of as a composition of affine functions with "activation functions" between each one, that make the overall composition non-linear.  In this way one can approximate any continuous function arbitrarily closely with the right neural network.  This is an example of a [universal approximation theorem.](https://en.wikipedia.org/wiki/Universal_approximation_theorem)  The $i$th affine function $A_i:\mathbb R^{m_i}\to \mathbb R^{n_i}$ has the form $A_i(\overrightarrow x) = W_i\vec x +\overrightarrow b_i$, where $W_i$ is a matrix, and the **parameters** $W_i$, $\overrightarrow b_i$ for all $i$ can be tuned to give the best approximation by **training** the neural network.  Training a neural network consists of step-by-step modifying the parameters to minimize a **loss function**, a function that measures the error of the predictions made on the training data.  
 
 ## Example: Linear regression
 
 Linear regression is an example of a neural network with one affine function $f_{\overrightarrow\beta}:X\overrightarrow\beta$, where 
 
 {::nomarkdown}
-$$X = \begin{matrix}1 & x_{11} & \cdots & x_{1m} \\
+$$X = \begin{pmatrix}1 & x_{11} & \cdots & x_{1m} \\
 1 & x_{12} & \cdots & x_{2m} \\
 \vdots & \vdots & \cdots & \vdots \\
 1 & x_{1n} & \cdots & x_{nm}
-\end{matrix}$$
+\end{pmatrix}$$
 {:/}
 
 denotes $m$ features and $n$ observations, $\overrightarrow\beta = (\beta_0,\beta_1,\dots,\beta_m)$, and there is no activation function.  The loss function is the mean square error, 
@@ -28,12 +28,12 @@ $$\overrightarrow y = X\hat\overrightarrow\beta + \overrightarrow y\perp$$,
 where $\overrightarrow y\perp$ is perpendicular to $X\hat\overrightarrow\beta$.  This means it is killed by the transpose of $X$, so we have
 
 {::nomarkdown}
-$$\begin{aligned}
+$$\begin{align}
 X^T\overrightarrow y &= X^T\left\(X\hat\overrightarrow\beta + \overrightarrow y\perp\right\) \\
 X^T\overrightarrow y &= X^TX\hat\overrightarrow\beta \\
 X^T\overrightarrow y - X^TX\hat\overrightarrow\beta &= 0 \\
 \implies \hat\overrightarrow\beta &= \left\(X^TX\right\)^{-1}X^T\overrightarrow y.
-\end{aligned}
+\end{align}
 $$ 
 {:/}
 
@@ -42,12 +42,12 @@ This is also known as the **normal equation** (and note, it doesn't work if the 
 The other way uses multivariate calculus, and while it's more cumbersome than the linear algebra method, it's also the method that's generalizable to neural networks.  For multivariable functions, optima occur where the gradient is zero.  The loss function in this case happens to be [convex,](https://en.wikipedia.org/wiki/Convex_function) which guarantees anywhere the gradient is zero is a global minumum.  Thus we just set the gradient equal to zero and solve for $\hat\beta$.
 
 {::nomarkdown}
-$$\begin{aligned}
+$$\begin{align}
 \nabla MSE(\overrightarrow\beta) &= \lim_{\overrightarrow h\to \overrightarrow 0}\frac{MSE(\overrightarrow\beta+\overrightarrow h)-MSE(\overrightarrow\beta)}{\overrightarrow h} \\
  &= \lim_{\overrightarrow h\to \overrightarrow 0}\frac{\|\overrightarrow y-X\hat\overrightarrow\beta\|^2 - 2\left\(\overrightarrow y-X\hat\overrightarrow\beta\right)\cdot(X\overrightarrow h) + \|X\overrightarrow h\|^2 - \|\overrightarrow y-X\hat\overrightarrow\beta\|^2}{\overrightarrow h} \\
  &= \lim_{\overrightarrow h\to \overrightarrow 0}\frac{\|\overrightarrow y-X\hat\overrightarrow\beta\|^2 - 2X^T\left\(\overrightarrow y - X\hat\overrightarrow\beta\right)\cdot\overrightarrow h + \|X\overrightarrow h\|^2 - \|\overrightarrow y-X\hat\overrightarrow\beta\|^2}{\overrightarrow h} \\
  &= - 2X^T\left\(\overrightarrow y - X\hat\overrightarrow\beta\right)
-\end{aligned}
+\end{align}
 $$
 {:/}
 
@@ -55,11 +55,11 @@ Now set to zero and solve:
 
 {::nomarkdown}
 $$
-\begin{aligned}
+\begin{align}
 -2X^T\left\(\overrightarrow y-X\hat\overrightarrow\beta\right\) &= 0 \\
 X^T\left\(\overrightarrow y-X\hat\overrightarrow\beta\right\) &= 0 \\
 \implies \hat\overrightarrow\beta &= \left\(X^TX\right\)^{-1}X^T\overrightarrow y,
-\end{aligned}
+\end{align}
 $$
 {:/}
 
