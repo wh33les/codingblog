@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Machine learning&#58; Loss functions I.
+title: Machine learning&#58; Optimizing loss functions I.
 date: 2025-01-26 #13:00:00 -06:00
 ---
 I recently finished a Kaggle competition where I had to predict housing prices, given 79 features.  I tested several models, including linear and polynomial regression, some tree-based algorithms, and most interestingly, a neural network using PyTorch.  I learned a lot about neural networks in the process, and I wanted to touch on one aspect in these next two posts, loss functions.
