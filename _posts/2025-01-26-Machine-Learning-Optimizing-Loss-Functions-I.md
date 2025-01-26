@@ -17,8 +17,8 @@ $$X = \begin{pmatrix}1 & x_{11} & \cdots & x_{1m} \\
 1 & x_{1n} & \cdots & x_{nm}
 \end{pmatrix}$$
 
-denotes $m$ features and $n$ observations, $\vec\beta = (\beta_0,\beta_1,\dots,\beta_m)$, and there is no activation function.  The loss function is the mean square error, 
-$$\text{MSE}(\vec\beta) = \frac{1}{n}\|\vec y - X\vec\beta\|^2.$$
+denotes $m$ features and $n$ observations, $\vec\beta = \left(\beta_0,\beta_1,\dots,\beta_m\right)$, and there is no activation function.  The loss function is the mean square error, 
+$$\text{MSE}\left(\vec\beta\right) = \frac{1}{n}\|\vec y - X\vec\beta\|^2.$$
 There are two ways to minimize this function.  
 
 The most direct way is the linear algebra approach, which I will go over briefly because it's so concise.  Minimizing the distance between $\vec y$ and $X\vec\beta$ is the same as finding the length of the projection of the vector $\vec y$ to the hyperplane spanned by the columns of $X$.  The coefficients $\hat{\vec\beta}=(\hat\beta_0,\cdots,\hat\beta_m)$ of the projection written as a linear combination of the $\vec x_i$s give the parameters that optimize the linear approximation.  We have the formula
@@ -30,7 +30,7 @@ X^T\vec y = X^T(X\hat{\vec\beta} + \vec y_{\perp})\qquad\text{implies}\qquad
 X^T\vec y = X^TX\hat{\vec\beta} 
 \\
 \text{implies}\quad X^T\vec y - X^TX\hat{\vec\beta} = 0\qquad \text{implies}\qquad
-\hat{\vec\beta} = (X^TX)^{-1}X^T\vec y.
+\hat{\vec\beta} = \left(X^TX\right)^{-1}X^T\vec y.
 $$ 
 
 This is also known as the **normal equation** (and note, it doesn't work if the features are not linearly independent -- in that case one has to do feature selection to remove redundancies).
@@ -38,11 +38,11 @@ This is also known as the **normal equation** (and note, it doesn't work if the 
 The other way uses multivariate calculus, and while it's more cumbersome than the linear algebra method, it's also the method that's generalizable to neural networks.  For multivariable functions, optima occur where the gradient is zero.  The loss function in this case happens to be [convex,](https://en.wikipedia.org/wiki/Convex_function) which guarantees anywhere the gradient is zero is a global minumum.  Thus we just set the gradient equal to zero and solve for $\hat\beta$.
 
 $$
-\nabla \text{MSE}(\vec\beta) = \lim_{\vec h\to \vec 0}\frac{\text{MSE}(\vec\beta+\vec h)-\text{MSE}(\vec\beta)}{\vec h} 
+\nabla \text{MSE}(\vec\beta) = \lim_{\vec h\to \vec 0}\frac{\text{MSE}\left(\vec\beta+\vec h\right)-\text{MSE}(\vec\beta)}{\vec h} 
 \\
-= \lim_{\vec h\to \vec 0}\frac{\|\vec y-X\hat{\vec\beta}\|^2 - 2(\vec y-X\hat{\vec\beta})\cdot(X\vec h) + \|X\vec h\|^2 - \|\vec y-X\hat{\vec\beta}\|^2}{\vec h} 
+= \lim_{\vec h\to \vec 0}\frac{\|\vec y-X\hat{\vec\beta}\|^2 - 2\left(\vec y-X\hat{\vec\beta}\right)\cdot(X\vec h) + \|X\vec h\|^2 - \|\vec y-X\hat{\vec\beta}\|^2}{\vec h} 
 \\
-= \lim_{\vec h\to \vec 0}\frac{\|\vec y-X\hat{\vec\beta}\|^2 - 2X^T(\vec y - X\hat{\vec\beta})\cdot\vec h + \|X\vec h\|^2 - \|\vec y-X\hat{\vec\beta}\|^2}{\vec h}
+= \lim_{\vec h\to \vec 0}\frac{\|\vec y-X\hat{\vec\beta}\|^2 - 2X^T\left(\vec y - X\hat{\vec\beta}\right)\cdot\vec h + \|X\vec h\|^2 - \|\vec y-X\hat{\vec\beta}\|^2}{\vec h}
 \\
 = - 2X^T(\vec y - X\hat{\vec\beta})
 $$
