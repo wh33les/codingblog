@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Machine learning&#58; PCA II 
+title: Machine learning&#58; PCA II. 
 --- 
 Check out my [previous post](https://transitioning-to-industry.org/Machine-Learning-PCA-I.html) on the idea and math behind PCA.
 

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Machine learning&#58; MASE
+title: Machine learning&#58; MASE.
 date: 2024-10-28 #13:00:00 -06:00
 ---
 I recently completed a forecast project for the 2024 U.S. presidential election that used a double exponential smoothing algorithm.  In developing the model, I used a grid search with the metric MASE, which stands for **mean absolute scaled error**.

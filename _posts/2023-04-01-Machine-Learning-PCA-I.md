@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Machine learning&#58; PCA I
+title: Machine learning&#58; PCA I.
 --- 
 PCA stands for Principal Component Analysis.  It's what's called an _unsupervised learning_ algorithm and it's a (clever!) way of reducing the number of dimensions in a data set.  As a bonus, it reveals correlations between features.  
 
