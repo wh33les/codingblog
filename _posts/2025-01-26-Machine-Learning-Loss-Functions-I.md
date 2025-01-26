@@ -26,13 +26,13 @@ $$\vec y = X\hat{\vec\beta} + \vec y_{\perp}$$,
 where $\vec y_{\perp}$ is perpendicular to $X\hat{\vec\beta}$.  This means it is killed by the transpose of $X$, so we have
 
 $$
-X^T\vec y = X^T\left\(X\hat{\vec\beta} + \vec y_{\perp}\right\)\implies
+X^T\vec y = X^T\left\(X\hat{\vec\beta} + \vec y_{\perp}\right\)\text{implies}\quad
 
 
-X^T\vec y = X^TX\hat{\vec\beta} \implies
+X^T\vec y = X^TX\hat{\vec\beta} \text{implies}\quad
 
 
-X^T\vec y - X^TX\hat{\vec\beta} = 0 \implies
+X^T\vec y - X^TX\hat{\vec\beta} = 0 \text{implies}\quad
 
 \hat{\vec\beta} = \left\(X^TX\right\)^{-1}X^T\vec y.
 $$ 
