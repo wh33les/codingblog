@@ -26,13 +26,14 @@ $$\vec y = X\hat{\vec\beta} + \vec y_{\perp}$$,
 where $\vec y_{\perp}$ is perpendicular to $X\hat{\vec\beta}$.  This means it is killed by the transpose of $X$, so we have
 
 $$
-X^T\vec y = X^T(X\hat{\vec\beta} + \vec y_{\perp})\text{implies}\quad
+X^T\vec y = X^T(X\hat{\vec\beta} + \vec y_{\perp})\quad\text{implies}\quad
 
 
-X^T\vec y = X^TX\hat{\vec\beta} \text{implies}\quad
+X^T\vec y = X^TX\hat{\vec\beta} 
+$$
 
-
-X^T\vec y - X^TX\hat{\vec\beta} = 0 \text{implies}\quad
+$$
+\text{implies}\quad X^T\vec y - X^TX\hat{\vec\beta} = 0\quad \text{implies}\quad
 
 \hat{\vec\beta} = (X^TX)^{-1}X^T\vec y.
 $$ 
@@ -41,28 +42,36 @@ This is also known as the **normal equation** (and note, it doesn't work if the 
 
 The other way uses multivariate calculus, and while it's more cumbersome than the linear algebra method, it's also the method that's generalizable to neural networks.  For multivariable functions, optima occur where the gradient is zero.  The loss function in this case happens to be [convex,](https://en.wikipedia.org/wiki/Convex_function) which guarantees anywhere the gradient is zero is a global minumum.  Thus we just set the gradient equal to zero and solve for $\hat\beta$.
 
-{::nomarkdown}
 $$
-\begin{eqnarray}
-\nabla \text{MSE}(\vec\beta) &= \lim_{\vec h\to \vec 0}\frac{\text{MSE}(\vec\beta+\vec h)-\text{MSE}(\vec\beta)}{\vec h} \\
- &= \lim_{\vec h\to \vec 0}\frac{\|\vec y-X\hat{\vec\beta}\|^2 - 2\left\(\vec y-X\hat{\vec\beta}\right)\cdot(X\vec h) + \|X\vec h\|^2 - \|\vec y-X\hat{\vec\beta}\|^2}{\vec h} \\
- &= \lim_{\vec h\to \vec 0}\frac{\|\vec y-X\hat{\vec\beta}\|^2 - 2X^T\left\(\vec y - X\hat{\vec\beta}\right)\cdot\vec h + \|X\vec h\|^2 - \|\vec y-X\hat{\vec\beta}\|^2}{\vec h} \\
- &= - 2X^T\left\(\vec y - X\hat{\vec\beta}\right)
-\end{eqnarray}
+\nabla \text{MSE}(\vec\beta) = \lim_{\vec h\to \vec 0}\frac{\text{MSE}(\vec\beta+\vec h)-\text{MSE}(\vec\beta)}{\vec h} 
 $$
-{:/}
+
+$$
+\quad = \lim_{\vec h\to \vec 0}\frac{\|\vec y-X\hat{\vec\beta}\|^2 - 2\left\(\vec y-X\hat{\vec\beta}\right)\cdot(X\vec h) + \|X\vec h\|^2 - \|\vec y-X\hat{\vec\beta}\|^2}{\vec h} 
+$$
+
+$$
+\quad = \lim_{\vec h\to \vec 0}\frac{\|\vec y-X\hat{\vec\beta}\|^2 - 2X^T\left\(\vec y - X\hat{\vec\beta}\right)\cdot\vec h + \|X\vec h\|^2 - \|\vec y-X\hat{\vec\beta}\|^2}{\vec h}
+$$
+
+$$
+ \quad = - 2X^T\left\(\vec y - X\hat{\vec\beta}\right)
+$$
 
 Now set to zero and solve:
 
-{::nomarkdown}
 $$
-\begin{eqnarray}
--2X^T\left\(\vec y-X\hat{\vec\beta}\right\) &= 0 \\
-X^T\left\(\vec y-X\hat{\vec\beta}\right\) &= 0 \\
-\implies \hat{\vec\beta} &= \left\(X^TX\right\)^{-1}X^T\vec y,
-\end{eqnarray}
+-2X^T\left\(\vec y-X\hat{\vec\beta}\right\) = 0 
 $$
-{:/}
+
+$$
+\text{implies}\quad 
+X^T\left\(\vec y-X\hat{\vec\beta}\right\) = 0 
+$$
+
+$$
+\text{implies}\quad \hat{\vec\beta} = \left\(X^TX\right\)^{-1}X^T\vec y,
+$$
 
 which verifies the linear algebra technique.
 
