@@ -26,10 +26,9 @@ $$\vec y = X\hat{\vec\beta} + \vec y_{\perp}$$,
 where $\vec y_{\perp}$ is perpendicular to $X\hat{\vec\beta}$.  This means it is killed by the transpose of $X$, so we have
 
 $$
-X^T\vec y = X^T(X\hat{\vec\beta} + \vec y_{\perp})\qquad\text{implies}\qquad
+X^T\vec y = X^T(X\hat{\vec\beta} + \vec y_{\perp})\quad\text{implies}\quad
 X^T\vec y = X^TX\hat{\vec\beta} 
-\\
-\text{implies}\quad X^T\vec y - X^TX\hat{\vec\beta} = 0\qquad \text{implies}\qquad
+\quad\text{implies}\quad
 \hat{\vec\beta} = \left(X^TX\right)^{-1}X^T\vec y.
 $$ 
 
@@ -51,11 +50,8 @@ Now set to zero and solve:
 
 $$
 -2X^T\left(\vec y-X\hat{\vec\beta}\right) = 0 
-\\
-\text{implies}\quad 
-X^T\left(\vec y-X\hat{\vec\beta}\right) = 0 
-\\
-\text{implies}\quad \hat{\vec\beta} = \left(X^TX\right)^{-1}X^T\vec y,
+
+\quad\text{implies}\quad \hat{\vec\beta} = \left(X^TX\right)^{-1}X^T\vec y,
 $$
 
 which verifies the linear algebra technique.
