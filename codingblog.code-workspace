@@ -5,6 +5,11 @@
 			"path": "."
 		},
 		{
+			"name": "wh33les.github.io",
+			"path": "../wh33les.github.io"
+		},
+		{
+			"name": "data-science-fall-2024",
 			"path": "../data-science-fall-2024"
 		}
 	],
