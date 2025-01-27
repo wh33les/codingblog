@@ -47,6 +47,20 @@ $$
 = - 2X^T\left(\vec y - X\hat{\vec\beta}\right)
 $$
 
+<!--
+$$
+\begin{align*}
+\nabla \text{MSE}(\vec\beta) &= \lim_{\vec h\to \vec 0}\frac{\text{MSE}\left(\vec\beta+\vec h\right)-\text{MSE}(\vec\beta)}{\vec h} 
+\\
+&= \lim_{\vec h\to \vec 0}\frac{\|\vec y-X\hat{\vec\beta}\|^2 - 2\left(\vec y-X\hat{\vec\beta}\right)\cdot(X\vec h) + \|X\vec h\|^2 - \|\vec y-X\hat{\vec\beta}\|^2}{\vec h} 
+\\
+&= \lim_{\vec h\to \vec 0}\frac{\|\vec y-X\hat{\vec\beta}\|^2 - 2X^T\left(\vec y - X\hat{\vec\beta}\right)\cdot\vec h + \|X\vec h\|^2 - \|\vec y-X\hat{\vec\beta}\|^2}{\vec h}
+\\
+&= - 2X^T\left(\vec y - X\hat{\vec\beta}\right)
+\end{align*}
+$$
+-->
+
 Now set to zero and solve:
 
 $$
